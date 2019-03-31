@@ -47,4 +47,20 @@ public class Campeonato {
     public void setTemporada(String temporada) {
         this.temporada = temporada;
     }
+
+    public static Integer getAttributeCount(){
+        return Campeonato.class.getDeclaredFields().length;
+    }
+
+    public String[] toArray(){
+
+        String[] att = new String[this.getAttributeCount()];
+
+        att[0] = this.getNome();
+        att[1] = this.getPais();
+        att[2] = this.getTemporada();
+        att[3] = Integer.toString(this.getId());
+
+        return att;
+    }
 }
